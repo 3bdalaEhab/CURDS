@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>CRUDS</title>
+</head>
+
+<body class="bg-dark text-center">
+    <div class="cruds">
+        <div class="container p-5">
+            <header class="text-white my-5">
+                <h1>CRUDS</h1>
+                <p class="fs-5">PRODUCT MANAGEMENT SYSTEM</p>
+            </header>
+
+            <section class="inputs">
+                <div class="row g-1">
+                    <div class="col-12">
+                        <input class="w-100 px-3 py-2 rounded-3 border-0 my-2" type="text" placeholder="title"
+                            id="title" />
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <input onkeyup="getTotal()" id="price" placeholder="price"
+                            class="w-100 px-3 py-2 rounded-3 border-0" type="text" />
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <input onkeyup="getTotal()" id="taxes" placeholder="taxes"
+                            class="w-100 px-3 py-2 rounded-3 border-0" type="text" />
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <input onkeyup="getTotal()" id="ads" placeholder="ads"
+                            class="w-100 px-3 py-2 rounded-2 border-0" type="text" />
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <input onkeyup="getTotal()" id="discount" placeholder="discount"
+                            class="w-100 px-3 py-2 rounded-2 border-0" type="text" />
+                    </div>
+                    <small class="col-12 col-md-5 fs-5 overflow-auto m-auto py-1 mt-2 rounded-3 text-white p-1"
+                        id="total"></small>
+
+                    <input class="w-100 px-3 py-2 rounded-3 border-0 my-1" type="text" placeholder="count" id="count" />
+                    <input class="w-100 px-3 py-2 rounded-3 border-0 mb-2 my-1" type="text" placeholder="category"
+                        id="category" />
+                    <button id="submit" class="btn btn-warning fw-medium col-md-6 m-auto rounded-pill" type="submit">
+                        Create
+                    </button>
+                </div>
+            </section>
+
+            <section class="outputs mx-0">
+                <div class="m-auto text-center col-12 my-2">
+                    <input onkeyup="searchData(this.value)" class="w-100 p-2 border-0 rounded-3" type="text"
+                        placeholder="Search" id="search" />
+                </div>
+
+                <div class="row m-auto text-center justify-content-around">
+                    <button type="submit" onclick="getSearchMood(this.id)"
+                        class="btn fs-6 fw-medium col-md-3 col-12 my-2 rounded-pill" id="searchtitle">
+                        Search By Title
+                    </button>
+                    <button type="submit" onclick="getSearchMood(this.id)"
+                        class="btn fs-6 fw-medium col-md-3 col-12 my-2 rounded-pill" id="searchCategory">
+                        Search By Category
+                    </button>
+                </div>
+                <div class="overflow-auto">
+                    <div id="delete-all"></div>
+                    <table class="my-4 m-auto col-3 table-dark table">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>title</th>
+                                <th>price</th>
+                                <th>texes</th>
+                                <th>ads</th>
+                                <th>discount</th>
+                                <th>total</th>
+                                <th>category</th>
+                                <th>Update</th>
+                                <th>Delate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
